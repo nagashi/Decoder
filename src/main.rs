@@ -4,6 +4,10 @@ use std::io::BufRead;
 use std::path::{Path, PathBuf};
 use walkdir::WalkDir;
 
+/*
+Search for the absolute path of a file on your operating system. 
+The `walkdir` crate is used to traverse directories recursively.
+*/
 fn find_file(name: &str, start_dir: &Path) -> Option<PathBuf> {
     for entry in WalkDir::new(start_dir).into_iter().filter_map(Result::ok) {
         let path = entry.path();
