@@ -10,7 +10,7 @@ Your function must be able to process an input file with the following format:
 &nbsp;&nbsp;2 dogs\
 &nbsp;&nbsp;4 cats\
 &nbsp;&nbsp;1 i\
-&nbsp;&nbsp;5 you\
+&nbsp;&nbsp;5 you
 
 In this file, each line contains a number followed by a word. The task is to decode a hidden message based on the arrangement of these numbers into a "pyramid" structure. The numbers are placed into the pyramid in ascending order, with each line of the pyramid having one more number than the line above it. The smallest number is 1, and the numbers increase consecutively, like so:
 
