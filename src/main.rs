@@ -67,6 +67,9 @@ fn read_lines(
 }
 
 fn main() {
+    /*
+    File is in the assets directory.
+    */
     let file_name = "coding_tree.txt";
     /*
     Starting directory for search.
