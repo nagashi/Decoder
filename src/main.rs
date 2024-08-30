@@ -5,7 +5,7 @@ use std::path::{Path, PathBuf};
 use walkdir::WalkDir;
 
 /*
-Search for the absolute path of a file on your operating system. 
+Search for the absolute path of a file on your operating system.
 The `walkdir` crate is used to traverse directories recursively.
 */
 fn find_file(name: &str, start_dir: &Path) -> Option<PathBuf> {
@@ -68,16 +68,36 @@ fn read_lines(
 
 fn main() {
     /*
-    File is in the assets directory.
+    Determine OS and set root directory
+    */
+    let start_directory;
+    match std::env::consts::OS {
+        "windows" => {
+            start_directory = Path::new("C:\\");
+        }
+        "linux" | "macos" | "ios" | "solaris" | "freebsd" | "dragonfly" | "netbsd" | "openbsd"
+        | "android" => {
+            start_directory = Path::new("/");
+        }
+        _ => {
+            eprint!("Unable to detect OS!");
+            /*
+            Gently end the process
+            with some failure.
+            */
+            std::process::exit(1);
+        }
+    };
+    /*
+    Input files are in the assets/decode directory.
     */
     let file_name = "coding_tree.txt";
     /*
     Starting directory for search.
     The runtime for this process
     will depend on the preciseness
-    of the path entered.
+    of the start directory.
     */
-    let start_directory = std::path::Path::new("/Users"); 
 
     match find_file(file_name, start_directory) {
         Some(file_path) => {
@@ -87,7 +107,6 @@ fn main() {
             proof of concept.
             */
             println!("{decoded_message}");
-
         }
         None => eprintln!("File not found"),
     }
