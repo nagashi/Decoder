@@ -25,3 +25,9 @@ The key to decoding the message is to use the words corresponding to the numbers
 6: computers
 
 and your function would return the string "i love computers".
+
+RUST language:\
+&nbsp; Additional functionality has been added to detect
+the OS the program is running on and to set
+the appropriate root directory.\
+[Click here to learn more about Rust](https://www.rust-lang.org/tools/install#:~:text=Using%20rustup%20(Recommended)&text=See%20%22Other%20Installation%20Methods%22%20if%20you%20are%20on%20Windows.&text=It%20looks%20like%20you're%20running%20Windows.,when%20prompted%20to%20do%20so.)
