@@ -73,7 +73,7 @@ fn main() {
     let start_directory;
     match std::env::consts::OS {
         "windows" => {
-            start_directory = Path::new("C:\\");
+            start_directory = Path::new("\\");
         }
         "linux" | "macos" | "ios" | "solaris" | "freebsd" | "dragonfly" | "netbsd" | "openbsd"
         | "android" => {
