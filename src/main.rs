@@ -22,7 +22,7 @@ fn decode(message_file: &str) -> String {
     let mut key_value_map: HashMap<u32, String> = HashMap::new();
 
     if let Ok(lines) = read_lines(&message_file) {
-        for line in lines {
+        lines.for_each(|line| {
             if let Ok(ip) = line {
                 let parts: Vec<&str> = ip.split_whitespace().collect();
                 if parts.len() == 2 {
@@ -31,7 +31,7 @@ fn decode(message_file: &str) -> String {
                     }
                 }
             }
-        }
+        });
     }
 
     let mut decoded_message = String::new();
